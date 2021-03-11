@@ -130,14 +130,14 @@ load_data_json <- function (data_path) {
 
         version <- data_json [['format_version']]
 
-        # Lacking better source the file name is good run id.
-        meta_vm_name <- data_json [['environment']] [['vm']] [['name']]
-        meta_vm_version <- data_json [['environment']] [['vm']] [['version']]
-        meta_vm_configuration <- paste (data_json [['environment']] [['vm']] [['args']], collapse = ' ')
+        meta_vm_name <- get_with_default (data_json, 'Unknown Name', 'environment', 'vm', 'name')
+        meta_vm_version <- get_with_default (data_json, 'Unknown Version', 'environment', 'vm', 'version')
+        meta_vm_configuration <- paste (get_with_default (data_json, 'Unknown Arguments', 'environment', 'vm', 'args'), collapse = ' ')
 
-        meta_benchmark_list <- data_json [['benchmarks']]
+        # Lacking better source the file name is good run id.
         meta_run_name <- data_file_name
 
+        meta_benchmark_list <- data_json [['benchmarks']]
         for (meta_benchmark_name in meta_benchmark_list) {
 
             data_read <- NULL

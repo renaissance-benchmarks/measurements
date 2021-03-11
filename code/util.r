@@ -1,3 +1,14 @@
+#' Get from tibble with default value.
+get_with_default <- function (data, default, ...) {
+    this <- data
+    for (index in list (...)) {
+        this <- this [[index]]
+        if (length (this) == 0) return (default)
+    }
+    return (this)
+}
+
+
 #' Tibble factor merger.
 factor_merger <- function (one, two, cols) {
     for (col in cols) {
