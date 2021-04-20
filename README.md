@@ -31,32 +31,32 @@ The JVM implementations referenced in the results are:
 
 - **OpenJDK** is the GraalVM Community Edition JVM implementation run with `-XX:-EnableJVMCI -XX:-UseJVMCICompiler` to force the use of the default OpenJDK JIT compiler.
 
-- **GraalVM CE** is GraalVM Community Edition 20.3.0.
+- **GraalVM CE** is GraalVM Community Edition 21.1.0-dev.
 ```
 > java -version
-openjdk version "1.8.0_272"
-OpenJDK Runtime Environment (build 1.8.0_272-b10)
-OpenJDK 64-Bit Server VM GraalVM CE 20.3.0 (build 25.272-b10-jvmci-20.3-b06, mixed mode)
+openjdk version "1.8.0_292"
+OpenJDK Runtime Environment (build 1.8.0_292-b09)
+OpenJDK 64-Bit Server VM GraalVM CE 21.1.0-dev (build 25.292-b09-jvmci-21.1-b05, mixed mode)
 ```
 ```
 > java -version
-openjdk version "11.0.9" 2020-10-20
-OpenJDK Runtime Environment GraalVM CE 20.3.0 (build 11.0.9+10-jvmci-20.3-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 20.3.0 (build 11.0.9+10-jvmci-20.3-b06, mixed mode, sharing)
+openjdk version "11.0.11" 2021-04-20
+OpenJDK Runtime Environment GraalVM CE 21.1.0-dev (build 11.0.11+8-jvmci-21.1-b05)
+OpenJDK 64-Bit Server VM GraalVM CE 21.1.0-dev (build 11.0.11+8-jvmci-21.1-b05, mixed mode, sharing)
 ```
 
-- **GraalVM EE** is GraalVM Enterprise Edition 20.3.0.
+- **GraalVM EE** is GraalVM Enterprise Edition 21.1.0-dev.
 ```
 > java -version
-java version "1.8.0_271"
-Java(TM) SE Runtime Environment (build 1.8.0_271-b09)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 20.3.0 (build 25.271-b09-jvmci-20.3-b06, mixed mode)
+java version "1.8.0_291"
+Java(TM) SE Runtime Environment (build 1.8.0_291-b10)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.1.0-dev (build 25.291-b10-jvmci-21.1-b05, mixed mode)
 ```
 ```
 > java -version
-java version "11.0.9" 2020-10-20 LTS
-Java(TM) SE Runtime Environment GraalVM EE 20.3.0 (build 11.0.9+7-LTS-jvmci-20.3-b06)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 20.3.0 (build 11.0.9+7-LTS-jvmci-20.3-b06, mixed mode, sharing)
+java version "11.0.11" 2021-04-20 LTS
+Java(TM) SE Runtime Environment GraalVM EE 21.1.0-dev (build 11.0.11+9-LTS-jvmci-21.1-b05)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.1.0-dev (build 11.0.11+9-LTS-jvmci-21.1-b05, mixed mode, sharing)
 ```
 
 #### Mean Repetition Times
