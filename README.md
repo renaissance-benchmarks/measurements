@@ -13,7 +13,7 @@ Please note that performance measurements depend on many complex factors and the
 
 ### Measurement information
 
-The current measurements were collected with Renaissance `91cf51d` on multiple
+The current measurements were collected with Renaissance `e3c0a0a` on multiple
 8 core Intel Xeon E5-2620 v4 machines at 2100 GHz with 64 GB RAM,
 running bare metal Fedora Linux 31 with kernel 5.3.8.
 
@@ -31,32 +31,44 @@ The JVM implementations referenced in the results are:
 
 - **OpenJDK** is the GraalVM Community Edition JVM implementation run with `-XX:-EnableJVMCI -XX:-UseJVMCICompiler` to force the use of the default OpenJDK JIT compiler.
 
-- **GraalVM CE** is GraalVM Community Edition 21.2.0-dev.
+- **GraalVM CE** is GraalVM Community Edition 21.3.0-dev.
 ```
 > java -version
 openjdk version "1.8.0_302"
-OpenJDK Runtime Environment (build 1.8.0_302-b07)
-OpenJDK 64-Bit Server VM GraalVM CE 21.2.0-dev (build 25.302-b07-jvmci-21.2-b06, mixed mode)
+OpenJDK Runtime Environment (build 1.8.0_302-b06)
+OpenJDK 64-Bit Server VM GraalVM CE 21.3.0-dev (build 25.302-b06-jvmci-21.3-b04, mixed mode)
 ```
 ```
 > java -version
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment GraalVM CE 21.2.0-dev (build 11.0.12+6-jvmci-21.2-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 21.2.0-dev (build 11.0.12+6-jvmci-21.2-b06, mixed mode, sharing)
+openjdk version "11.0.13" 2021-10-19
+OpenJDK Runtime Environment GraalVM CE 21.3.0-dev (build 11.0.13+7-jvmci-21.3-b04)
+OpenJDK 64-Bit Server VM GraalVM CE 21.3.0-dev (build 11.0.13+7-jvmci-21.3-b04, mixed mode, sharing)
+```
+```
+> java -version
+openjdk version "17" 2021-09-14
+OpenJDK Runtime Environment GraalVM CE 21.3.0-dev (build 17+35-jvmci-21.3-b04)
+OpenJDK 64-Bit Server VM GraalVM CE 21.3.0-dev (build 17+35-jvmci-21.3-b04, mixed mode, sharing)
 ```
 
-- **GraalVM EE** is GraalVM Enterprise Edition 21.2.0-dev.
+- **GraalVM EE** is GraalVM Enterprise Edition 21.3.0-dev.
 ```
 > java -version
-java version "1.8.0_301"
-Java(TM) SE Runtime Environment (build 1.8.0_301-b09)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.2.0-dev (build 25.301-b09-jvmci-21.2-b06, mixed mode)
+java version "1.8.0_311"
+Java(TM) SE Runtime Environment (build 1.8.0_311-b10)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.3.0-dev (build 25.311-b10-jvmci-21.3-b04, mixed mode)
 ```
 ```
 > java -version
-java version "11.0.12" 2021-07-20 LTS
-Java(TM) SE Runtime Environment GraalVM EE 21.2.0-dev (build 11.0.12+8-LTS-jvmci-21.2-b06)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.2.0-dev (build 11.0.12+8-LTS-jvmci-21.2-b06, mixed mode, sharing)
+java version "11.0.13" 2021-10-19 LTS
+Java(TM) SE Runtime Environment GraalVM EE 21.3.0-dev (build 11.0.13+10-LTS-jvmci-21.3-b04)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.3.0-dev (build 11.0.13+10-LTS-jvmci-21.3-b04, mixed mode, sharing)
+```
+```
+> java -version
+java version "17.0.1" 2021-10-19 LTS
+Java(TM) SE Runtime Environment GraalVM EE 21.3.0-dev (build 17.0.1+12-LTS-jvmci-21.3-b04)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 21.3.0-dev (build 17.0.1+12-LTS-jvmci-21.3-b04, mixed mode, sharing)
 ```
 
 #### Mean Repetition Times
@@ -66,6 +78,7 @@ The error bars show 99% confidence intervals for the mean computed using bootstr
 
 <p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/mean-bar-jdk-8-time.png"/></p>
 <p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/mean-bar-jdk-11-time.png"/></p>
+<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/mean-bar-jdk-17-time.png"/></p>
 
 #### Individual Repetition Times
 
@@ -77,3 +90,4 @@ Floating window outlier filtering was used to discard no more than 10% of most e
 
 <p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/samples-violin-jdk-8-time-warm-inliers.png"/></p>
 <p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/samples-violin-jdk-11-time-warm-inliers.png"/></p>
+<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/samples-violin-jdk-17-time-warm-inliers.png"/></p>
