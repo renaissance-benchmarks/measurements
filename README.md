@@ -13,7 +13,7 @@ Please note that performance measurements depend on many complex factors and the
 
 ### Measurement information
 
-The current measurements were collected with Renaissance `3eef1364a142426f508c29d1e6604b1ba3d7e23e` on multiple
+The current measurements were collected with Renaissance `dde0f7af00738e640ae0acf68ab66decc8249e15` on multiple
 8 core Intel Xeon E5-2620 v4 machines at 2100 GHz with 64 GB RAM,
 running bare metal Fedora Linux 35 with kernel 5.16.11.
 
@@ -31,32 +31,32 @@ The JVM implementations referenced in the results are:
 
 - **OpenJDK** is the GraalVM Community Edition JVM implementation run with `-XX:-EnableJVMCI -XX:-UseJVMCICompiler` to force the use of the default OpenJDK JIT compiler.
 
-- **GraalVM CE** is GraalVM Community Edition 22.1.0.
+- **GraalVM CE** is GraalVM Community Edition 22.2.0.
 ```
 > java -version
-openjdk version "11.0.15" 2022-04-19
-OpenJDK Runtime Environment GraalVM CE 22.1.0 (build 11.0.15+10-jvmci-22.1-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 22.1.0 (build 11.0.15+10-jvmci-22.1-b06, mixed mode, sharing)
+openjdk version "11.0.16" 2022-07-19
+OpenJDK Runtime Environment GraalVM CE 22.2.0 (build 11.0.16+8-jvmci-22.2-b06)
+OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 11.0.16+8-jvmci-22.2-b06, mixed mode, sharing)
 ```
 ```
 > java -version
-openjdk version "17.0.3" 2022-04-19
-OpenJDK Runtime Environment GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06, mixed mode, sharing)
+openjdk version "17.0.4" 2022-07-19
+OpenJDK Runtime Environment GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06)
+OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing)
 ```
 
-- **GraalVM EE** is GraalVM Enterprise Edition 22.1.0.
+- **GraalVM EE** is GraalVM Enterprise Edition 22.2.0.
 ```
 > java -version
-java version "11.0.15" 2022-04-19 LTS
-Java(TM) SE Runtime Environment GraalVM EE 22.1.0 (build 11.0.15+8-LTS-jvmci-22.1-b05)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.1.0 (build 11.0.15+8-LTS-jvmci-22.1-b05, mixed mode, sharing)
+java version "11.0.16" 2022-07-19 LTS
+Java(TM) SE Runtime Environment GraalVM EE 22.2.0 (build 11.0.16+11-LTS-jvmci-22.2-b05)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.2.0 (build 11.0.16+11-LTS-jvmci-22.2-b05, mixed mode, sharing)
 ```
 ```
 > java -version
-java version "17.0.3" 2022-04-19 LTS
-Java(TM) SE Runtime Environment GraalVM EE 22.1.0 (build 17.0.3+8-LTS-jvmci-22.1-b05)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.1.0 (build 17.0.3+8-LTS-jvmci-22.1-b05, mixed mode, sharing)
+java version "17.0.4" 2022-07-19 LTS
+Java(TM) SE Runtime Environment GraalVM EE 22.2.0 (build 17.0.4+11-LTS-jvmci-22.2-b05)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.2.0 (build 17.0.4+11-LTS-jvmci-22.2-b05, mixed mode, sharing)
 ```
 
 #### Mean Repetition Times
