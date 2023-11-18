@@ -13,7 +13,7 @@ Please note that performance measurements depend on many complex factors and the
 
 ### Measurement information
 
-The current measurements were collected with Renaissance `dde0f7af00738e640ae0acf68ab66decc8249e15` on multiple
+The current measurements were collected with Renaissance 0.15.0 `87358d94a06920c1f66e08dca3869bf96004d115` on multiple
 8 core Intel Xeon E5-2620 v4 machines at 2100 GHz with 64 GB RAM,
 running bare metal Fedora Linux 35 with kernel 5.16.11.
 
@@ -29,51 +29,49 @@ Except as noted below, other settings were left at default values.
 
 The JVM implementations referenced in the results are:
 
-- **OpenJDK** is the GraalVM Community Edition JVM implementation run with `-XX:-EnableJVMCI -XX:-UseJVMCICompiler` to force the use of the default OpenJDK JIT compiler.
+- **OpenJDK** is the GraalVM Community JVM implementation run with `-XX:-EnableJVMCI -XX:-UseJVMCICompiler` to force the use of the default OpenJDK JIT compiler.
 
-- **GraalVM CE** is GraalVM Community Edition 22.2.0.
+- **GraalVM Community** is the GraalVM Community JVM implementation.
 ```
 > java -version
-openjdk version "11.0.16" 2022-07-19
-OpenJDK Runtime Environment GraalVM CE 22.2.0 (build 11.0.16+8-jvmci-22.2-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 11.0.16+8-jvmci-22.2-b06, mixed mode, sharing)
-```
-```
-> java -version
-openjdk version "17.0.4" 2022-07-19
-OpenJDK Runtime Environment GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing)
-```
-
-- **GraalVM EE** is GraalVM Enterprise Edition 22.2.0.
-```
-> java -version
-java version "11.0.16" 2022-07-19 LTS
-Java(TM) SE Runtime Environment GraalVM EE 22.2.0 (build 11.0.16+11-LTS-jvmci-22.2-b05)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.2.0 (build 11.0.16+11-LTS-jvmci-22.2-b05, mixed mode, sharing)
+openjdk version "17.0.9" 2023-10-17
+OpenJDK Runtime Environment GraalVM CE 17.0.9+9.1 (build 17.0.9+9-jvmci-23.0-b22)
+OpenJDK 64-Bit Server VM GraalVM CE 17.0.9+9.1 (build 17.0.9+9-jvmci-23.0-b22, mixed mode, sharing)
 ```
 ```
 > java -version
-java version "17.0.4" 2022-07-19 LTS
-Java(TM) SE Runtime Environment GraalVM EE 22.2.0 (build 17.0.4+11-LTS-jvmci-22.2-b05)
-Java HotSpot(TM) 64-Bit Server VM GraalVM EE 22.2.0 (build 17.0.4+11-LTS-jvmci-22.2-b05, mixed mode, sharing)
+openjdk version "21.0.1" 2023-10-17
+OpenJDK Runtime Environment GraalVM CE 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19)
+OpenJDK 64-Bit Server VM GraalVM CE 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19, mixed mode, sharing)
 ```
 
-#### Mean Repetition Times
-
-The figure shows the mean repetition time for each benchmark, computed as the average duration of all warm repetitions.
-The error bars show 99% confidence intervals for the mean computed using bootstrap.
-
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/mean-bar-jdk-11-time.png"/></p>
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/mean-bar-jdk-17-time.png"/></p>
+- **Oracle GraalVM EE** is the Oracle GraalVM JVM implementation.
+```
+> java -version
+java version "17.0.9" 2023-10-17 LTS
+Java(TM) SE Runtime Environment Oracle GraalVM 17.0.9+11.1 (build 17.0.9+11-LTS-jvmci-23.0-b21)
+Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 17.0.9+11.1 (build 17.0.9+11-LTS-jvmci-23.0-b21, mixed mode, sharing)
+```
+```
+> java -version
+java version "21.0.1" 2023-10-17
+Java(TM) SE Runtime Environment Oracle GraalVM 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19)
+Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19, mixed mode, sharing)
+```
 
 #### Individual Repetition Times
 
-The figure shows the individual repetition times for each benchmark in a violin plot.
+The figures show the individual repetition times for each benchmark in a violin plot.
 The violin shape is the widest at the height of the most frequent repetition times,
 the box inside the shape stretches from the low to the high quartile,
 with a mark at the median.
 Floating window outlier filtering was used to discard no more than 10% of most extreme observations, to preserve plot scale.
 
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/samples-violin-jdk-11-time-warm-inliers.png"/></p>
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/samples-violin-jdk-17-time-warm-inliers.png"/></p>
+<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/violin-jdk-17.png"/></p>
+<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/violin-jdk-21.png"/></p>
+
+To generate the figures from the data, use the `download.sh` script to get the data from the
+[Renaissance Benchmark Results Repository](https://zenodo.org/communities/renaissance)
+and then run the `plot_website_stripes` and `plot_website_violins` functions from the
+[rren](https://github.com/renaissance-benchmarks/utilities-r) package
+in the corresponding directory.
