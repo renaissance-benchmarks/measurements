@@ -13,7 +13,7 @@ Please note that performance measurements depend on many complex factors and the
 
 ### Measurement information
 
-The current measurements were collected with Renaissance 0.15.0 `87358d94a06920c1f66e08dca3869bf96004d115` on multiple
+The current measurements were collected with Renaissance 0.16.0 `1de5790caa4c4756716dfcb9c34a6e0316c4727f` on multiple
 8 core Intel Xeon E5-2620 v4 machines at 2100 GHz with 64 GB RAM,
 running bare metal Fedora Linux 35 with kernel 5.16.11.
 
@@ -34,29 +34,17 @@ The JVM implementations referenced in the results are:
 - **GraalVM Community** is the GraalVM Community JVM implementation.
 ```
 > java -version
-openjdk version "17.0.9" 2023-10-17
-OpenJDK Runtime Environment GraalVM CE 17.0.9+9.1 (build 17.0.9+9-jvmci-23.0-b22)
-OpenJDK 64-Bit Server VM GraalVM CE 17.0.9+9.1 (build 17.0.9+9-jvmci-23.0-b22, mixed mode, sharing)
-```
-```
-> java -version
-openjdk version "21.0.1" 2023-10-17
-OpenJDK Runtime Environment GraalVM CE 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19)
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19, mixed mode, sharing)
+openjdk version "23.0.1" 2024-10-15
+OpenJDK Runtime Environment GraalVM CE 23.0.1+11.1 (build 23.0.1+11-jvmci-b01)
+OpenJDK 64-Bit Server VM GraalVM CE 23.0.1+11.1 (build 23.0.1+11-jvmci-b01, mixed mode, sharing)
 ```
 
 - **Oracle GraalVM EE** is the Oracle GraalVM JVM implementation.
 ```
 > java -version
-java version "17.0.9" 2023-10-17 LTS
-Java(TM) SE Runtime Environment Oracle GraalVM 17.0.9+11.1 (build 17.0.9+11-LTS-jvmci-23.0-b21)
-Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 17.0.9+11.1 (build 17.0.9+11-LTS-jvmci-23.0-b21, mixed mode, sharing)
-```
-```
-> java -version
-java version "21.0.1" 2023-10-17
-Java(TM) SE Runtime Environment Oracle GraalVM 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19)
-Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 21.0.1+12.1 (build 21.0.1+12-jvmci-23.1-b19, mixed mode, sharing)
+java version "23.0.1" 2024-10-15
+Java(TM) SE Runtime Environment Oracle GraalVM 23.0.1+11.1 (build 23.0.1+11-jvmci-b01)
+Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 23.0.1+11.1 (build 23.0.1+11-jvmci-b01, mixed mode, sharing)
 ```
 
 #### Individual Repetition Times
@@ -67,8 +55,7 @@ the box inside the shape stretches from the low to the high quartile,
 with a mark at the median.
 Floating window outlier filtering was used to discard no more than 10% of most extreme observations, to preserve plot scale.
 
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/violin-jdk-17.png"/></p>
-<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/violin-jdk-21.png"/></p>
+<p align="center"><img src="https://github.com/renaissance-benchmarks/measurements/raw/master/violin-jdk-23.png"/></p>
 
 To generate the figures from the data, use the `download.sh` script to get the data from the
 [Renaissance Benchmark Results Repository](https://zenodo.org/communities/renaissance)
